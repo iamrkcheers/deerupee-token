@@ -80,7 +80,6 @@ App = {
 
     // Load account data
     web3.eth.getCoinbase((err, account) => {
-      console.log(account);
       if (err === null) {
         App.account = account;
         $("#accountAddress").html("Your Account: " + account);
@@ -113,7 +112,6 @@ App = {
         App.contracts.DeeRupeeToken.deployed()
           .then((instance) => {
             deeRupeeTokenInstance = instance;
-            console.log(instance);
             return deeRupeeTokenInstance.balanceOf(App.account);
           })
           .then((balance) => {
