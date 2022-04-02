@@ -112,6 +112,7 @@ App = {
         App.contracts.DeeRupeeToken.deployed()
           .then((instance) => {
             deeRupeeTokenInstance = instance;
+            console.log(instance);
             return deeRupeeTokenInstance.balanceOf(App.account);
           })
           .then((balance) => {
